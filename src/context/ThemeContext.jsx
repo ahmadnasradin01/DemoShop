@@ -10,14 +10,10 @@ export const ThemeProvider = ({ children }) => {
       if (storedPrefs) {
         return storedPrefs;
       }
-      
-      
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        return 'dark';
-      }
     }
     
-    return 'light'; 
+    // Default to light mode when no preference is saved
+    return 'light';
   };
 
   const [theme, setTheme] = useState(getInitialTheme);
